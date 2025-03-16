@@ -4,8 +4,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coding Challenge: Risk Management Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+        }
+        header, footer {
+            padding: 20px;
+            text-align: center;
+            background-color: lightskyblue;
+        }
+        footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+        }
+        main {
+            padding: 10px;
+        }
+        #riskDashboard {
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        .riskCard {
+            display: inline-grid;
+            text-align: center;
+            margin: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            width: 20%;
+            overflow: clip;
+            background-color: lightslategray;
+        }
+    </style>
 </head>
 <body>
-    <script src="cc_15.js"></script>
+    <header><h3>Coding Challenge: Risk Management Dashboard</h3></header>
+    <main>
+        <!--A <div> with id="riskDashboard" to contain all risk items.-->
+        <div id="riskDashboard">
+            <!-- An input form for adding new risk items. -->
+            <form action="javascript:;" onsubmit=" addRiskItem( this.children[0].value , this.children[1].value , this.children[2].value ); ">
+                <input type="text" required>
+                <input type="text" required>
+                <input type="text" required>
+                <!-- A button to submit new risk assessments. -->
+                <button type="submit">Submit Risk Assesment</button>
+            </form>
+        </div>
+    </main>
+    <footer>Placeholder footer content</footer>
 </body>
+<script src="cc_15.js"></script>
 </html>

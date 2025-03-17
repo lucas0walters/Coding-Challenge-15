@@ -37,22 +37,37 @@
             overflow: clip;
             background-color: lightslategray;
         }
+        form {
+            margin-bottom: 25px;
+            margin-top: 50px;
+            padding-left: 30%;
+            display: inline-grid;
+            width: 40%;
+        }
+        label {
+            margin-bottom: 10px;
+            margin-top: 15px;
+        }
     </style>
 </head>
 <body>
     <header><h3>Coding Challenge: Risk Management Dashboard</h3></header>
     <main>
         <!--A <div> with id="riskDashboard" to contain all risk items.-->
-        <div id="riskDashboard">
-            <!-- An input form for adding new risk items. -->
-            <form action="javascript:;" onsubmit=" addRiskItem( this.children[0].value , this.children[1].value , this.children[2].value ); ">
-                <input type="text" required>
-                <input type="text" required>
-                <input type="text" required>
-                <!-- A button to submit new risk assessments. -->
-                <button type="submit">Submit Risk Assesment</button>
-            </form>
-        </div>
+                        <!-- An input form for adding new risk items. -->
+        <form action="javascript:;" onsubmit=" addRiskItem( riskName.value, priorityDropdown.value, department.value ); ">
+            <label>Risk Name: </label><input name="riskName" type="text" required>
+            <label>Priority: </label><select name="priorityDropdown" id="priorityDropdown">
+                <option value="High">High</option>
+                <option value="Medium">Medium</option>
+                <option value="Low">Low</option>
+            </select>
+            <label>Department: </label><input name="department" type="text" required>
+            <!-- A button to submit new risk assessments. -->
+            <button type="submit" style="margin-top: 15px;">Submit Risk Assesment</button>
+        </form><br>    
+        <center><div id="riskDashboard">
+        </div></center>
     </main>
     <footer>Placeholder footer content</footer>
 </body>

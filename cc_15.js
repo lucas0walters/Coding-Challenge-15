@@ -28,3 +28,5 @@ function addRiskItem(riskName, riskLevel, department) { //Write a function addRi
 
 addRiskItem("Data Breach", "High", "IT");
 addRiskItem("Supply Chain Disruption", "Medium", "Operations");
+addRiskItem("Cybersecurity Threat", "High", "IT");
+addRiskItem("HR Compliance Issue", "Low", "Human Resources");

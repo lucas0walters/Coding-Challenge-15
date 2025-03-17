@@ -20,13 +20,24 @@ function addRiskItem(riskName, riskLevel, department) { //Write a function addRi
         event.stopPropagation(); //Use stopPropagation() in the "Resolve" button’s event handler to prevent bubbling.
     });
 
-    riskCard.appendChild(resolveBtn) //adds the resolve button using appendChild
+    //Task 5
+    const increaseBtn = document.createElement("button"); //An increase risk level button
+    increaseBtn.textContent = "Increase Risk Levels"; //sets the text for the button
+    increaseBtn.addEventListener("click", (event) => { //Adding an event listener to the button
+        riskTable = {Low: "Medium",Medium: "High",High: "High"}
+        riskCard.setAttribute("class", `riskCard ${riskTable[riskCard.classList[1]]}`)
+        event.stopPropagation(); //Use stopPropagation() in the increase button’s event handler to prevent bubbling.
+    });
+
+    riskCard.appendChild(increaseBtn);
+    riskCard.appendChild(resolveBtn); //adds the resolve button using appendChild
     riskDashboard.appendChild(riskCard); //Appends it to the riskDashboard.
 };
 
-//Test Case: Task 2
+//Test Cases
 
 addRiskItem("Data Breach", "High", "IT");
 addRiskItem("Supply Chain Disruption", "Medium", "Operations");
 addRiskItem("Cybersecurity Threat", "High", "IT");
 addRiskItem("HR Compliance Issue", "Low", "Human Resources");
+addRiskItem("Employee Retention", "Low", "HR");

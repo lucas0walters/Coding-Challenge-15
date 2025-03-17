@@ -22,7 +22,7 @@ function addRiskItem(riskName, riskLevel, department) { //Write a function addRi
 
     //Task 5
     const increaseBtn = document.createElement("button"); //An increase risk level button
-    increaseBtn.textContent = "Increase Risk Levels"; //sets the text for the button
+    increaseBtn.textContent = "Increase Risk Level"; //sets the text for the button
     increaseBtn.addEventListener("click", (event) => { //Adding an event listener to the button
         riskTable = {Low: "Medium",Medium: "High",High: "High"}
         riskCard.setAttribute("class", `riskCard ${riskTable[riskCard.classList[1]]}`)

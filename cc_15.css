@@ -1,0 +1,128 @@
+body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: #f4f6fb;
+        }
+        header, footer {
+            padding: 20px;
+            text-align: center;
+            background-color: #5b8def; /* Brighter blue for energy */
+            color: #fff;
+        }
+        footer {
+            position: static;
+            width: auto;
+            left: unset;
+            bottom: unset;
+            margin-top: 30px;
+        }
+        main {
+            padding: 10px;
+            min-height: 80vh;
+        }
+        #riskDashboard {
+            margin-top: 20px;
+            margin-bottom: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 16px;
+        }
+        .riskCard {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            margin: 0;
+            padding: 16px;
+            border-radius: 8px;
+            width: 320px;
+            max-width: 90vw;
+            min-width: 220px;
+            border: 2px #333 solid; /* Changed to darker grey */
+            box-sizing: border-box;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+            transition: box-shadow 0.2s;
+            background: #fff;
+        }
+        .riskCard:hover {
+            box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+        }
+        form {
+            margin-bottom: 25px;
+            margin-top: 50px;
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            width: 100%;
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+        }
+        label {
+            margin-bottom: 6px;
+            margin-top: 12px;
+        }
+        input, select {
+            margin-bottom: 10px;
+            padding: 8px;
+            border-radius: 4px;
+            border: 1px solid #bbb;
+            font-size: 1em;
+            background: #f4f6fb;
+        }
+        button {
+            margin-top: 8px;
+            margin-bottom: 8px;
+            padding: 8px 12px;
+            border-radius: 4px;
+            border: 1px solid #bbb;
+            background: #f7f7f7; /* Neutral light grey */
+            color: #222;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.2s, color 0.2s, border 0.2s;
+        }
+        button:hover {
+            background: #e0e0e0;
+            color: #111;
+            border: 1.5px solid #5b8def;
+        }
+        .Low {
+            background-color: #d4f8e8; /* Vibrant soft green */
+        }
+        .Medium {
+            background-color: #fff7d6; /* Vibrant soft yellow */
+        }
+        .High {
+            background-color: #ffd6d6; /* Vibrant soft red */
+        }
+
+        /* Responsive styles */
+        @media (max-width: 600px) {
+            .riskCard {
+                width: 98vw;
+                min-width: unset;
+                max-width: 98vw;
+                padding: 10px;
+            }
+            form {
+                width: 98vw;
+                max-width: 98vw;
+                padding: 10px;
+            }
+            main {
+                padding: 2vw;
+            }
+            #riskDashboard {
+                gap: 8px;
+            }
+            footer {
+                font-size: 0.9em;
+                padding: 10px;
+            }
+        }

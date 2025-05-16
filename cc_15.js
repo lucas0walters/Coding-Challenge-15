@@ -9,24 +9,50 @@ if (riskDashboard) {
 
 function addRiskItem(riskName, riskLevel, department) { //Write a function addRiskItem(riskName, riskLevel, department) that:
     let riskCard = document.createElement("div"); //Creates a new risk card (div)
-    riskCard.innerHTML = `<h3>${riskName}</h3><p>Risk level: <u>${riskLevel}</u><p>Department: <u>${department}</u></p>`;
     riskCard.setAttribute("class", `riskCard ${riskLevel}`); //Assigns a class "riskCard" to each card.
 
-    //Task 3 - Removing Risk Items.
-    const resolveBtn = document.createElement("button"); //A resolve button
-    resolveBtn.textContent = "Resolve"; //sets the text for the button
-    resolveBtn.addEventListener("click", (event) => { //Adding an event listener to the button
-        riskDashboard.removeChild(riskCard) //removeChild ticket from riskDashboard
-        event.stopPropagation(); //Use stopPropagation() in the "Resolve" button’s event handler to prevent bubbling.
+    // Create and append the risk name
+    const nameElem = document.createElement("h3");
+    nameElem.textContent = riskName;
+    riskCard.appendChild(nameElem);
+
+    // Create and append the risk level
+    const levelElem = document.createElement("p");
+    const levelLabel = document.createTextNode("Risk level: ");
+    const levelUnderline = document.createElement("u");
+    levelUnderline.textContent = riskLevel;
+    levelElem.appendChild(levelLabel);
+    levelElem.appendChild(levelUnderline);
+    riskCard.appendChild(levelElem);
+
+    // Create and append the department
+    const deptElem = document.createElement("p");
+    const deptLabel = document.createTextNode("Department: ");
+    const deptUnderline = document.createElement("u");
+    deptUnderline.textContent = department;
+    deptElem.appendChild(deptLabel);
+    deptElem.appendChild(deptUnderline);
+    riskCard.appendChild(deptElem);
+
+    // Resolve button
+    const resolveBtn = document.createElement("button");
+    resolveBtn.textContent = "Resolve";
+    resolveBtn.addEventListener("click", (event) => {
+        riskDashboard.removeChild(riskCard);
+        event.stopPropagation();
     });
 
-    //Task 5
-    const increaseBtn = document.createElement("button"); //An increase risk level button
-    increaseBtn.textContent = "Increase Risk Level"; //sets the text for the button
-    increaseBtn.addEventListener("click", (event) => { //Adding an event listener to the button
-        riskTable = {Low: "Medium",Medium: "High",High: "High"}
-        riskCard.setAttribute("class", `riskCard ${riskTable[riskCard.classList[1]]}`)
-        event.stopPropagation(); //Use stopPropagation() in the increase button’s event handler to prevent bubbling.
+    // Increase Risk Level button
+    const increaseBtn = document.createElement("button");
+    increaseBtn.textContent = "Increase Risk Level";
+    increaseBtn.addEventListener("click", (event) => {
+        const riskTable = {Low: "Medium", Medium: "High", High: "High"};
+        const currentLevel = riskCard.classList[1];
+        const newLevel = riskTable[currentLevel] || currentLevel;
+        riskCard.setAttribute("class", `riskCard ${newLevel}`);
+        // Update the displayed risk level text
+        levelUnderline.textContent = newLevel;
+        event.stopPropagation();
     });
 
     riskCard.appendChild(increaseBtn);

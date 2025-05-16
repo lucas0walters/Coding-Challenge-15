@@ -105,21 +105,21 @@ body {
         /* Responsive styles */
         @media (max-width: 600px) {
             .riskCard {
-                width: 98vw;
+                width: 90vw;
                 min-width: unset;
-                max-width: 98vw;
+                max-width: 90vw;
                 padding: 10px;
             }
             form {
-                width: 98vw;
-                max-width: 98vw;
+                width: 90vw;
+                max-width: 90vw;
                 padding: 10px;
             }
             main {
                 padding: 2vw;
             }
             #riskDashboard {
-                gap: 8px;
+                gap: 15px;
             }
             footer {
                 font-size: 0.9em;

@@ -66,6 +66,7 @@ addRiskItem("Data Breach", "High", "IT");
 addRiskItem("Supply Chain Disruption", "Medium", "Operations");
 addRiskItem("Cybersecurity Threat", "High", "IT");
 addRiskItem("HR Compliance Issue", "Low", "Human Resources");
-addRiskItem("Employee Retention", "Low", "HR");
+addRiskItem("Employee Retention", "Low", "Human Resources");
+addRiskItem("Market Volatility", "Medium", "Finance");
 
 // Click inside a risk card does not trigger a dashboard-wide event.
